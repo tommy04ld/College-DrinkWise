@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scripts/Player.gd"
+} ]
+_global_script_class_icons={
+"Player": ""
+}
+
 [application]
 
 config/name="College DrinkWise"
+run/main_scene="res://Scenes/World.tscn"
 config/icon="res://assetsFB/textures/icon.png"
 
 [display]
@@ -47,6 +58,14 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+
+[input]
+
+flap={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
 }
 
 [input_devices]
