@@ -7,8 +7,8 @@ onready var road = $Road
 var score = 0 setget set_score
 
 func _ready():
-	obstacle_spawner.connect("obstacle_created", self, "_on_obstacle_created")
-	new_game()
+	$AnimationPlayer.play("fade_to_normal")
+
 
 func new_game():
 	self.score = 0
@@ -37,3 +37,11 @@ func game_over():
 	obstacle_spawner.stop()
 	road.get_node("AnimationPlayer").stop()
 	get_tree().call_group("obstacles", "set_physics_process", false)
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	obstacle_spawner.connect("obstacle_created", self, "_on_obstacle_created")
+	new_game()
+	$HUD.show()
+
+

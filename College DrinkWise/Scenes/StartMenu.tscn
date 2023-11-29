@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assetsFB/textures/pixil-frame-0 (1).png" type="Texture" id=1]
+[ext_resource path="res://assetsFB/textures/pixil-frame-0.png" type="Texture" id=2]
+[ext_resource path="res://assetsFB/textures/buttons/NewGameOLINV.png" type="Texture" id=3]
+[ext_resource path="res://assetsFB/fonts/Flappyfont_48.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assetsFB/textures/buttons/NewGameOL.png" type="Texture" id=5]
+[ext_resource path="res://assetsFB/textures/buttons/QuitOutlineInvbtn.png" type="Texture" id=6]
+[ext_resource path="res://assetsFB/textures/buttons/QuitOutlinebtn.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/StartMenu.gd" type="Script" id=8]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_to_black"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.411765, 0.34902, 0.34902, 1 )
+scale = Vector2( 1, 1.13022 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.411765, 0.34902, 0.34902, 1 )
+position = Vector2( 0, 631 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="StartMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -1092, -22 )
+
+[node name="NewGame" type="TextureButton" parent="StartMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 81.0
+margin_top = 431.0
+margin_right = 403.0
+margin_bottom = 500.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+expand = true
+
+[node name="Title" type="Label" parent="StartMenu"]
+anchor_right = 1.0
+margin_top = 24.0
+margin_right = 480.0
+margin_bottom = 209.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/line_spacing = 5
+custom_constants/shadow_offset_y = 3
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 4 )
+text = "College 
+DrinkWise"
+align = 1
+
+[node name="Quit" type="TextureButton" parent="StartMenu"]
+margin_left = 174.0
+margin_top = 682.0
+margin_right = 280.0
+margin_bottom = 732.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 482.0
+margin_bottom = 854.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/fade_to_black = SubResource( 2 )
+
+[connection signal="pressed" from="StartMenu/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="StartMenu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
