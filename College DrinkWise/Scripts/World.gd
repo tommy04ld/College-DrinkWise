@@ -37,11 +37,17 @@ func game_over():
 	obstacle_spawner.stop()
 	road.get_node("AnimationPlayer").stop()
 	get_tree().call_group("obstacles", "set_physics_process", false)
+	$AnimationPlayer.play("fade_to_black")
+	$HUD.hide()
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	obstacle_spawner.connect("obstacle_created", self, "_on_obstacle_created")
-	new_game()
-	$HUD.show()
+	if anim_name == "fade_to_normal":
+		obstacle_spawner.connect("obstacle_created", self, "_on_obstacle_created")
+		new_game()
+		$HUD.show()
+	
+	if anim_name == "fade_to_black":
+		get_tree().change_scene_to(load('res://Scenes/LoseScreen.tscn'))
 
 

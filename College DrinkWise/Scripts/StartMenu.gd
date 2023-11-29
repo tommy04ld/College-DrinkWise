@@ -1,15 +1,12 @@
 extends Node2D
 
 
-
 func _on_Quit_pressed():
 	get_tree().quit()
 
 
 func _on_NewGame_pressed():
 	$AnimationPlayer.play("fade_to_black")
-
-
 
 
 
