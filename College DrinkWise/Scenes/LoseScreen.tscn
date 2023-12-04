@@ -17,7 +17,7 @@ margin_right = 490.0
 margin_bottom = 866.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Label" type="Label" parent="."]
+[node name="LoseTitle" type="Label" parent="."]
 margin_left = 3.0
 margin_top = 2.0
 margin_right = 545.0
@@ -62,6 +62,18 @@ margin_bottom = 701.0
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 5 )
 expand = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 44.0
+margin_top = 258.0
+margin_right = 842.0
+margin_bottom = 437.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+align = 1
+valign = 1
+autowrap = true
+uppercase = true
 
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="TryAgain" to="." method="_on_TryAgain_pressed"]
