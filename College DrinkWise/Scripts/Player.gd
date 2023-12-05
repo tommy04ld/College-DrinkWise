@@ -4,7 +4,7 @@ class_name Player
 
 signal died
 
-export var FLAP_Force = -200
+export var FLAP_Force = -225
 onready var animator = $AnimationPlayer
 var started = false
 var alive = true

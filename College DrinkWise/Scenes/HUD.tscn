@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assetsFB/fonts/Flappyfont_48.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=2]
+[ext_resource path="res://assetsFB/textures/d997c891ddfd751.png" type="Texture" id=3]
+[ext_resource path="res://assetsFB/textures/red solo cup.png" type="Texture" id=4]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -15,5 +17,80 @@ custom_constants/shadow_offset_y = 3
 custom_constants/shadow_as_outline = 1
 custom_fonts/font = ExtResource( 1 )
 text = "0"
+align = 1
+valign = 1
+
+[node name="SoloCup" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 438.0
+margin_right = 9.0
+margin_bottom = 91.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Sprite2" type="Sprite" parent="SoloCup"]
+position = Vector2( -89.0714, 45.3571 )
+scale = Vector2( 0.500638, 0.500638 )
+texture = ExtResource( 4 )
+
+[node name="x" type="Label" parent="SoloCup"]
+anchor_right = 1.0
+margin_left = -44.2856
+margin_top = 24.2857
+margin_right = -44.2856
+margin_bottom = 209.286
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 1 )
+text = "X
+"
+align = 1
+valign = 1
+
+[node name="Water" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 438.0
+margin_top = 74.0
+margin_right = 9.00003
+margin_bottom = 165.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Sprite" type="Sprite" parent="Water"]
+position = Vector2( -90, 9.70517 )
+scale = Vector2( 0.15377, 0.15377 )
+texture = ExtResource( 3 )
+
+[node name="x2" type="Label" parent="Water"]
+anchor_right = 1.0
+margin_left = -44.2856
+margin_top = 21.4286
+margin_right = -44.2856
+margin_bottom = 206.429
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 1 )
+text = "X
+"
 align = 1
 valign = 1
