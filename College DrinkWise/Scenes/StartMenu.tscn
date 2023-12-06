@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
+[ext_resource path="res://assetsFB/Sounds/Dj music.mp3" type="AudioStream" id=1]
 [ext_resource path="res://assetsFB/textures/pixil-frame-0.png" type="Texture" id=2]
 [ext_resource path="res://assetsFB/textures/buttons/NewGameOLINV.png" type="Texture" id=3]
 [ext_resource path="res://assetsFB/fonts/Flappyfont_48.tres" type="DynamicFont" id=4]
@@ -75,7 +76,7 @@ position = Vector2( -13, 0 )
 scale = Vector2( 0.22, 0.225 )
 frames = SubResource( 3 )
 animation = "blue"
-frame = 3
+frame = 2
 playing = true
 centered = false
 
@@ -137,6 +138,11 @@ color = Color( 0, 0, 0, 0 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
 anims/fade_to_black = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -3.714
+autoplay = true
 
 [connection signal="pressed" from="StartMenu/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="StartMenu/Quit" to="." method="_on_Quit_pressed"]

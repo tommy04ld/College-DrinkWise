@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bleeding_out2.mp3-b602a86788462594a710f49f7741a530.mp3str"
+
+[deps]
+
+source_file="res://assetsFB/Sounds/bleeding_out2.mp3"
+dest_files=[ "res://.import/bleeding_out2.mp3-b602a86788462594a710f49f7741a530.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

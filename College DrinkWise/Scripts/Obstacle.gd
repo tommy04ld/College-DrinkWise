@@ -42,12 +42,14 @@ func _on_Wall_body_entered(body):
 func _on_ScoreArea_body_exited(body):
 	if body is Player:
 		emit_signal("score")
+		#$point.play()
 
 
 func _on_Water_body_entered(body):
 	if body is Player:
 		Global.decrease_effects()
 		print("water")
+		$waterGulp.play()
 		emit_signal("water_score")
 		#emit_signal("water_collected")
 		$Water.queue_free()
@@ -57,6 +59,7 @@ func _on_RedSoloCup_body_entered(body):
 	if body is Player:
 		Global.increase_effects()
 		print("solocup")
+		$redGulp.play()
 		emit_signal("red_score")
 		#emit_signal("solo_collected")
 		$RedSoloCup.queue_free()

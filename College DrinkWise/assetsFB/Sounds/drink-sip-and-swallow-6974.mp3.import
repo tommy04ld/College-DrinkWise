@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/drink-sip-and-swallow-6974.mp3-82b225819feebff98c2c25b0f719f459.mp3str"
+
+[deps]
+
+source_file="res://assetsFB/Sounds/drink-sip-and-swallow-6974.mp3"
+dest_files=[ "res://.import/drink-sip-and-swallow-6974.mp3-82b225819feebff98c2c25b0f719f459.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

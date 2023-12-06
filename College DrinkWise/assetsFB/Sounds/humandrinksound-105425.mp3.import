@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/humandrinksound-105425.mp3-545794a457dcbd7e5edf6d9e8bf6de03.mp3str"
+
+[deps]
+
+source_file="res://assetsFB/Sounds/humandrinksound-105425.mp3"
+dest_files=[ "res://.import/humandrinksound-105425.mp3-545794a457dcbd7e5edf6d9e8bf6de03.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

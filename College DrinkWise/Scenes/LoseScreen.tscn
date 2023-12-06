@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assetsFB/fonts/Flappyfont_48.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assetsFB/textures/buttons/QuitOutlineInvbtn.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assetsFB/textures/buttons/TryOLINV.png" type="Texture" id=6]
 [ext_resource path="res://assetsFB/textures/buttons/MainMenuOLINV.png" type="Texture" id=7]
 [ext_resource path="res://assetsFB/textures/buttons/TryOL.png" type="Texture" id=8]
+[ext_resource path="res://assetsFB/Sounds/bleeding_out2.mp3" type="AudioStream" id=9]
 
 [node name="LoseScreen" type="Node2D"]
 script = ExtResource( 4 )
@@ -74,6 +75,12 @@ align = 1
 valign = 1
 autowrap = true
 uppercase = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+volume_db = 1.5
+pitch_scale = 0.95
+autoplay = true
 
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="TryAgain" to="." method="_on_TryAgain_pressed"]

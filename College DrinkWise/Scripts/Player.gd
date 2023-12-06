@@ -37,9 +37,11 @@ func start():
 func flap():
 	linear_velocity.y = FLAP_Force
 	angular_velocity = -8
+	$swoosh.play()
 
 func die():
 	if !alive:return
+	$AudioStreamPlayer2D.play()
 	alive = false
 	animator.stop()
 	emit_signal("died")

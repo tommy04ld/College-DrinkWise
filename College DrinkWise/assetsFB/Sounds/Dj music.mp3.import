@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dj music.mp3-74496f28791dbc5c7efcc4386e14df52.mp3str"
+
+[deps]
+
+source_file="res://assetsFB/Sounds/Dj music.mp3"
+dest_files=[ "res://.import/Dj music.mp3-74496f28791dbc5c7efcc4386e14df52.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
