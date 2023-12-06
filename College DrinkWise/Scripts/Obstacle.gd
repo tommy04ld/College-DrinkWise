@@ -1,5 +1,11 @@
 extends Node2D
 
+
+signal water_score
+signal red_score
+signal water_colleceted
+signal solo_collected
+
 signal score
 const SPEED = 250
 
@@ -19,8 +25,10 @@ func _process(delta):
 		var number = rng.randi_range(0,100)
 		if number > 0 and number < 25:
 			$Water.visible = true
-		if number > 25 and number < 60:
+			$Water.monitoring = true
+		if number > 25 and number < 65:
 			$RedSoloCup.visible = true
+			$RedSoloCup.monitoring = true
 		run = false
 	
 
@@ -34,3 +42,21 @@ func _on_Wall_body_entered(body):
 func _on_ScoreArea_body_exited(body):
 	if body is Player:
 		emit_signal("score")
+
+
+func _on_Water_body_entered(body):
+	if body is Player:
+		Global.decrease_effects()
+		print("water")
+		emit_signal("water_score")
+		#emit_signal("water_collected")
+		$Water.queue_free()
+
+
+func _on_RedSoloCup_body_entered(body):
+	if body is Player:
+		Global.increase_effects()
+		print("solocup")
+		emit_signal("red_score")
+		#emit_signal("solo_collected")
+		$RedSoloCup.queue_free()

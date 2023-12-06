@@ -8,7 +8,7 @@ export var FLAP_Force = -225
 onready var animator = $AnimationPlayer
 var started = false
 var alive = true
-const Max_Rotation_Degrees = -30
+const Max_Rotation_Degrees = -25
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("flap") && alive:
@@ -24,7 +24,7 @@ func _physics_process(delta):
 	#Rotation While falling
 	if linear_velocity.y > 0:
 		if rotation_degrees <= 100:
-			angular_velocity = 3
+			angular_velocity = 2
 		else:
 			angular_velocity = 0
 	

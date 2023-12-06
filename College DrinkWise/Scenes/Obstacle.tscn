@@ -13,10 +13,10 @@ position = Vector2( 0, 427 )
 script = ExtResource( 2 )
 
 [node name="Wall" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 75 )
+position = Vector2( 0, 77 )
 
 [node name="Wall2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -75 )
+position = Vector2( 0, -87 )
 rotation = 3.14159
 
 [node name="ScoreArea" type="Area2D" parent="."]
@@ -27,10 +27,14 @@ shape = SubResource( 1 )
 
 [node name="Water" parent="." instance=ExtResource( 3 )]
 visible = false
+monitoring = false
 
 [node name="RedSoloCup" parent="." instance=ExtResource( 4 )]
 visible = false
+monitoring = false
 
 [connection signal="body_entered" from="Wall" to="." method="_on_Wall_body_entered"]
 [connection signal="body_entered" from="Wall2" to="." method="_on_Wall_body_entered"]
 [connection signal="body_exited" from="ScoreArea" to="." method="_on_ScoreArea_body_exited"]
+[connection signal="body_entered" from="Water" to="." method="_on_Water_body_entered"]
+[connection signal="body_entered" from="RedSoloCup" to="." method="_on_RedSoloCup_body_entered"]
