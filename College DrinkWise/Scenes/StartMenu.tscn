@@ -75,7 +75,7 @@ position = Vector2( -13, 0 )
 scale = Vector2( 0.22, 0.225 )
 frames = SubResource( 3 )
 animation = "blue"
-frame = 1
+frame = 3
 playing = true
 centered = false
 
