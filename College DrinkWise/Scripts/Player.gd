@@ -15,6 +15,7 @@ func _physics_process(delta):
 		if !started:
 			start()
 		flap()
+		
 	
 	#Rotation while moving up
 	if rotation_degrees <= Max_Rotation_Degrees:

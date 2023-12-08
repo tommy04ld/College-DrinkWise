@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assetsFB/textures/scary_horror_house Purple.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assetsFB/textures/scary_horror_houseGreen.png" type="Texture" id=11]
 [ext_resource path="res://assetsFB/textures/scary_horror_houseRed.png" type="Texture" id=12]
 [ext_resource path="res://assetsFB/Sounds/game_music.wav" type="AudioStream" id=13]
+[ext_resource path="res://CollegeDrinkWiseHTML/College DrinkWise.icon.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -102,7 +103,7 @@ position = Vector2( -13, 0 )
 scale = Vector2( 0.22, 0.225 )
 frames = SubResource( 5 )
 animation = "blue"
-frame = 1
+frame = 3
 playing = true
 centered = false
 
@@ -144,6 +145,12 @@ script = ExtResource( 9 )
 stream = ExtResource( 13 )
 volume_db = -4.0
 autoplay = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 7.55389, 13.4052 )
+normal = ExtResource( 14 )
+action = "flap"
 
 [connection signal="body_entered" from="Road/DeathZone" to="." method="_on_DeathZone_body_entered"]
 [connection signal="died" from="Player" to="." method="_on_Player_died"]
